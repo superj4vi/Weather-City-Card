@@ -1,3 +1,4 @@
+import "./WeatherCity";
 class WeatherCard extends HTMLElement {
   constructor() {
     super();
@@ -15,7 +16,7 @@ class WeatherCard extends HTMLElement {
        height:var(--height);
        background:#fff;
        box-shadow:0 0 25px 5px #0006;
-       border-radius:10px;
+      position:relative;
 
       }
 
@@ -30,7 +31,8 @@ class WeatherCard extends HTMLElement {
     this.shadowRoot.innerHTML = /* html */`
    <style>${WeatherCard.styles}</style>
    <div class="container">
-   <weather-city></weather-city>
+   <weather-city class="day"></weather-city>
+    <div class="zone"></div>
 
    </div>`;
   }

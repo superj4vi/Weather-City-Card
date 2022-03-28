@@ -7,14 +7,15 @@ class BuildingWindows extends HTMLElement {
   static get styles() {
     return /* css */ `
        :host {
-         background:#000;
-         transition:background 0.5s;
+         background:var(--window-turnoff-color);
+         transition:
+          background 0.5s,
+          box-shadow 1s;
      }
      :host(.on){
-       background:gold;
-       box-shadow:;
+       background:var(--window-color);
+       box-shadow:0 0 10px var(--shine-color);
          }
-
    `;
   }
 
@@ -27,8 +28,8 @@ class BuildingWindows extends HTMLElement {
     this.classList.add("on");
   }
 
-  turnff() {
-    this.classList.add("off");
+  turnoff() {
+    this.classList.remove("off");
   }
 
   toggle() {
@@ -37,8 +38,11 @@ class BuildingWindows extends HTMLElement {
   }
 
   setEvent() {
-    const ocurrs = Math.floor(Math.random() * 5);
+    const ocurrs = ~~(Math.random() * 35);
     if (ocurrs !== 0) return;
+
+    const time = 2000 + ~~(Math.random() * 10000);
+    setTimeout(() => this.toggle(), time);
   }
 
   render() {
