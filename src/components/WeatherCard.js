@@ -17,9 +17,7 @@ class WeatherCard extends HTMLElement {
        background:#fff;
        box-shadow:0 0 25px 5px #0006;
       position:relative;
-
       }
-
    `;
   }
 
@@ -32,9 +30,7 @@ class WeatherCard extends HTMLElement {
    <style>${WeatherCard.styles}</style>
    <div class="container">
    <weather-city class="day"></weather-city>
-    <div class="zone"></div>
-
-   </div>`;
+    `;
   }
 }
 

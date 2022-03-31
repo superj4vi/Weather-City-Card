@@ -1,4 +1,7 @@
 import "./BuildingCity";
+import "./RainCity";
+import "./CloudCity";
+
 const BUILDING_NUMBER = 6;
 const TIME_TO_CHANGE_STAGE = 10000;
 const CLOUDS_NUMBERS = 10;
@@ -54,7 +57,7 @@ class WeatherCity extends HTMLElement {
         border-radius:50%;
         position:absolute;
         top:30px;
-        transition:transform 4s ease-in-out;
+        transition:transform 6s ease-in-out;
         z-index:2;
       }
       .sun{
@@ -117,7 +120,7 @@ class WeatherCity extends HTMLElement {
   }
 
   generateClouds() {
-    return "<clouds-city></clouds-city>".repeat(CLOUDS_NUMBERS);
+    return "<cloud-city></cloud-city>".repeat(CLOUDS_NUMBERS);
   }
 
   changeState() {
@@ -140,8 +143,7 @@ class WeatherCity extends HTMLElement {
    <div class="building">
      ${this.generateBuilding()}
    </div>
-
-   </div>`;
+</div>`;
   }
 }
 

@@ -38,10 +38,10 @@ class BuildingWindows extends HTMLElement {
   }
 
   setEvent() {
-    const ocurrs = ~~(Math.random() * 35);
-    if (ocurrs !== 0) return;
+    const ocurred = ~~(Math.random() * 35);
+    if (ocurred !== 0) return;
 
-    const time = 2000 + ~~(Math.random() * 10000);
+    const time = 2000 + ~~(Math.random() * 1000);
     setTimeout(() => this.toggle(), time);
   }
 
